@@ -241,7 +241,7 @@ class Couple:
         else:
             CITY = user[0]['city']['id']
 
-        rs = api.users.search(age_from=AGE_FROM, age_to=AGE_TO, city=CITY, sex = SEX, status = STATUS, count=5, has_photo=1)
+        rs = api.users.search(age_from=AGE_FROM, age_to=AGE_TO, city=CITY, sex = SEX, status = STATUS, has_photo=1)  
 
         list_users = [x for x in rs['items'] if x != True]
         list_data = []
