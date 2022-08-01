@@ -12,10 +12,6 @@ from datetime import date, time
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
-# Токен для авторизации как сообщество
-token = 'vk1.a.eZACjTMg5Byksi-0Jr5iVvTXA04kzx15PRJR_4c0s3uQsnNyHpBeGv6mYfb6YpIUB0FHF2RlTXjg50xlDfIxFi10kO8-oDP4hPtwXnokrxE9BXBKoHfi6micFrTnohE89oCJBw_ZPtSKQyd6tJ-cLJyaLr_tWiNp4nUzy4Iu5HtrOzba5ix8EgKZliFHrVHB'
-# Токен для авторизации как пользователь
-token2 = 'vk1.a.pk0BpDFpKlYzbeereX8uOoBajTFCGGjTupcRgFeqiuMjkoxjRb_PqDN8DFAx_Pn0-1gCmLsWUO2gL9qjdWvDo2uqsG5hdznsxHvC5whCYdlhs5fZsIauiwzLwhVXEMMNJUuLK-89rATKAcvUiAr3btdDFAIcHKEwO8igZlJ809WW7lOBmGgCDTR8CHUMHwkp'
 
 vk_session = vk_api.VkApi(token=token)
 vk_session2 = vk_api.VkApi(token=token2)
@@ -241,7 +237,7 @@ class Couple:
         else:
             CITY = user[0]['city']['id']
 
-        rs = api.users.search(age_from=AGE_FROM, age_to=AGE_TO, city=CITY, sex = SEX, status = STATUS, has_photo=1)  
+        rs = api.users.search(age_from=AGE_FROM, age_to=AGE_TO, city=CITY, sex = SEX, status = STATUS, has_photo=1)
 
         list_users = [x for x in rs['items'] if x != True]
         list_data = []
