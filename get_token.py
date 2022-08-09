@@ -1,7 +1,6 @@
 import requests
 from urllib.parse import urlparse, urlencode
 from tokens import user_token
-from pprint import pprint
 
 APP_ID = 213987465
 USER_ID = 1
